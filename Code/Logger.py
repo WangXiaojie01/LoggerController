@@ -2,7 +2,7 @@
 #-*- coding:utf8 -*-
 
 '''
-copyright @wangxiaojie 2020.01.16
+copyright @wangxiaojie 2020.01.17
 author: wangxiaojie
 '''
 
@@ -19,7 +19,6 @@ __all__ = [
 LOG_TYPE_ERROR = logging.ERROR
 LOG_TYPE_INFO = logging.INFO
 LOG_TYPE_DEBUG = logging.DEBUG
-PRINT_CONSOLE=True
 
 class Logger(object):
     def __init__(self):
