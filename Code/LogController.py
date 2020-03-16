@@ -18,6 +18,8 @@ class LogController(object):
         self.loggers = {}
         self.logRoot = logRoot
         self.isPrintToConsole = False
+        if not os.path.exists(logRoot):
+            os.mkdir(logRoot)
     
     def addLogger(self, name, level):
         if not name in self.loggers:
@@ -35,9 +37,10 @@ class LogController(object):
             return None
     
     def setPrintToConsole(self, isPrint):
-        self.isPrintToConsole = isPrint
-        for logName in self.loggers:
-            self.loggers[logName].setPrintToConsole(isPrint)
+        if self.isPrintToConsole != isPrint:
+            self.isPrintToConsole = isPrint
+            for logName in self.loggers:
+                self.loggers[logName].setPrintToConsole(isPrint)
 
 if __name__ == "__main__":
     import time
